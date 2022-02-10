@@ -1,0 +1,15 @@
+.container {
+    border-bottom: 1px solid var(--text);
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+
+    svg {
+        @media (max-width: 48rem) {
+            padding: 0.5em;
+        }
+
+        margin: 1.15em 0;
+    }
+}
