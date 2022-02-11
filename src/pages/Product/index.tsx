@@ -1,12 +1,82 @@
+import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
+import { Header } from "../../components/header"
+import { api } from "../../services/axios"
+
+import Styles from "./product.module.scss"
+
+interface Product {
+    id: number,
+    name: string,
+    price: number,
+    image: string
+    information: {
+        description: string,
+        startCount: number,
+        stockCount: number,
+        reviewCount: number,
+        comments: Array<string>
+    }
+}
 
 export const Product = (): JSX.Element => {
 
     const {id} = useParams()
+    const [product, setProduct] = useState({} as Product)
 
-    console.log(id)
+    useEffect(() => {
+        const getResponse = async () => {
+            const response = await api("/products/" + id)
+
+            const data: Product = response.data
+            setProduct(data)
+        }
+
+        getResponse()
+    }, [])
+
 
     return(
-        <div>{id}</div>
+        <>
+            <Header />
+
+            
+            <div className={Styles.container}>
+
+                <div className={Styles.content}>
+                    {/* Image */}
+                    <div>
+                        <img src={`/images/${product.image}.jpg`} alt={`${product.name}`} />
+                    </div>
+
+                    {/* Content */}
+                    <div>
+                        <h1>{product.name}</h1>
+                        <span>
+                            <img src="/images/stars.png" alt="Avaliações do Produto" />
+                            <span>{product.information?.reviewCount} Avaliações</span>
+                        </span>
+                        <h3>{product.information?.description}</h3>
+                        <div>
+                            {product.information?.stockCount >= 2 
+                                ? ( <p>*Em Stock</p> ) 
+                                : ( <p>*Sem Stock</p> )
+                            }
+                            <p>$ {product.price}</p>
+                        </div>
+                        <button>COMPRAR</button>
+                    </div>
+
+                </div>
+
+                {/* Comments */}
+                <div className={Styles.comments}>
+                    <img src="/images/background.png" alt="background" />
+                </div>
+
+            </div>
+
+
+        </>
     )
 }

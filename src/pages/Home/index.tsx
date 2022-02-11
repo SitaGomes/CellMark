@@ -43,13 +43,15 @@ export const Home = (): JSX.Element => {
 
           <div className={Styles.cardsContainer}>
             {products.map(product => (
-              <Link to={`/product/${product.id}`} className={Styles.cards} key={product.id}>
-                <img src={`images/${product.image}.jpg`} alt={product.name} />
+              <Link to={`product/${product.id}`} key={product.id}>
+                <div className={Styles.card}>
+                  <img src={`images/${product.image}.jpg`} alt={product.name} />
 
-                <span>
-                  <h2>{product.name.toUpperCase()}</h2>
-                  <p> $ {product.price}</p>
-                </span>
+                  <span>
+                    <h2>{product.name.toUpperCase()}</h2>
+                    <p> $ {product.price}</p>
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
