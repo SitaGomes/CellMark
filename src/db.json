@@ -1,8 +1,40 @@
 {
     "products": [
-        {"id": 1,"name": "iphone 13", "price": 1000, "image": "iphone-13"},
-        {"id": 2, "name": "iphone X", "price": 500, "image": "iphone-X"},
-        {"id": 3, "name": "iphone 13 pro max", "price": 1200, "image": "iphone-13-pro-max"},
-        {"id": 4, "name": "iphone 12", "price": 700, "image": "iphone-12"}
+        {"id": 1,"name": "iphone 13", "price": 1000, "image": "iphone-13",
+            "informartion": {
+                "description": "",
+                "starCount": "",
+                "stock": 5,
+                "reviews": 100,
+                "comments": [] 
+            }
+        },
+        {"id": 2, "name": "iphone X", "price": 500, "image": "iphone-X",
+            "informartion": {
+                "description": "",
+                "starCount": "",
+                "stock": 5,
+                "reviews": 100,
+                "comments": [] 
+            }
+        },
+        {"id": 3, "name": "iphone 13 pro max", "price": 1200, "image": "iphone-13-pro-max",
+            "informartion": {
+                "description": "",
+                "starCount": "",
+                "stock": 5,
+                "reviews": 100,
+                "comments": [] 
+            }
+        },
+        {"id": 4, "name": "iphone 12", "price": 700, "image": "iphone-12",
+            "informartion": {
+                "description": "",
+                "starCount": "",
+                "stock": 5,
+                "reviews": 100,
+                "comments": [] 
+            }
+        }
     ]
 }
