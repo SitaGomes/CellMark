@@ -45,13 +45,11 @@ export const Product = (): JSX.Element => {
 
                 <div className={Styles.content}>
                     {/* Image */}
-                    <div>
-                        <img src={`/images/${product.image}.jpg`} alt={`${product.name}`} />
-                    </div>
+                    <img src={`/images/${product.image}.jpg`} alt={`${product.name}`} />
 
                     {/* Content */}
-                    <div>
-                        <h1>{product.name}</h1>
+                    <div className={Styles.contentData}>
+                        <h1>{product.name?.toUpperCase()}</h1>
                         <span>
                             <img src="/images/stars.png" alt="Avaliações do Produto" />
                             <span>{product.information?.reviewCount} Avaliações</span>
@@ -59,10 +57,10 @@ export const Product = (): JSX.Element => {
                         <h3>{product.information?.description}</h3>
                         <div>
                             {product.information?.stockCount >= 2 
-                                ? ( <p>*Em Stock</p> ) 
-                                : ( <p>*Sem Stock</p> )
+                                ? ( <p className={Styles.true}>*Em Stock</p> ) 
+                                : ( <p className={Styles.false}>*Sem Stock</p> )
                             }
-                            <p>$ {product.price}</p>
+                            <p className={Styles.price}>$ {product.price}</p>
                         </div>
                         <button>COMPRAR</button>
                     </div>

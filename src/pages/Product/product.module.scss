@@ -1,14 +1,75 @@
 .container {
-    background-color: var(--text);
-    
+
+    height: 100vh;
 }
 
 .content {
     background-color: var(--background);
+    text-align: center;
+    padding: 2.5em 2em 2em;
 
+    > img {
+        width: 300px;
+        border-radius: 20px;
+
+        margin-bottom: 2em;
+    }
+
+    .contentData {
+        h1 {
+            margin-bottom: 4px;
+        }
+
+        > span {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 2px;
+
+            span {
+                font-weight: 600;
+                color: var(--text)
+            }
+        }
+        
+        h3 {
+            padding: 1.5em 0;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        > div {
+            margin-bottom: 2em;
+            .true {
+                color: var(--green-500);
+            }
+
+            .false {
+                color: var(--red-500);
+            }
+
+            .price {
+                font-size: 2em;
+            }
+        }
+
+        > button {
+            width: 100%;
+            background: linear-gradient(91.06deg, rgba(235, 95, 40, 0.989583) 3.29%, #EB5E28 23.28%, #E6EB01 99.29%);
+            border-radius: 20px;
+
+            color: var(--title);
+            font-size: 1.5em;
+            font-weight: 600;
+
+            padding: 0.5em;
+        }
+    }
 }
 
+
 .comments {
+    background-color: var(--text);
 
     img {
         width: 100vw;

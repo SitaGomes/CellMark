@@ -2,7 +2,7 @@
     "products": [
         {"id": 1,"name": "iphone 13", "price": 1000, "image": "iphone-13",
             "information": {
-                "description": "",
+                "description": "IPhone 13. O sistema de câmera dupla mais avançado em um iPhone. Chip A15 Bionic com velocidade impressionante. Um grande salto em bateria. Projetado para durar. 5G ultrarrápido*. E tela Super Retina xdr mais brilhante. *É preciso ter um plano de dados. 5G só está disponível em alguns países e por meio de determinadas operadoras. As velocidades variam de acordo com as condições e operadoras locais.",
                 "starCount": "",
                 "stockCount": 2,
                 "reviewCount": 100,
@@ -11,7 +11,7 @@
         },
         {"id": 2, "name": "iphone X", "price": 500, "image": "iphone-X",
             "information": {
-                "description": "",
+                "description": "Com o A14 bionic e um face ID rápido. Um chip mais inteligente e poderoso. Sistema de câmera dupla inovador com controle de profundidade. O iPhone X é tudo o que você ama no iPhone. Levado ao extremo.",
                 "starCount": "",
                 "stockCount": 15,
                 "reviewCount": 100,
@@ -20,7 +20,7 @@
         },
         {"id": 3, "name": "iphone 13 pro max", "price": 1200, "image": "iphone-13-pro-max",
             "information": {
-                "description": "",
+                "description": "O Apple iPhone 13 Pro Max é um dos smartphones iOS mais avançados e completos que existem em circulação. Tem um grande display de 6.7 polegadas com uma resolução de 2778x1284 pixel. As funcionalidades oferecidas pelo Apple iPhone 13 Pro Max são muitas e inovadoras. Começando pelo 5G que permite a transferência de dados e excelente navegação na internet.",
                 "starCount": "",
                 "stockCount": 25,
                 "reviewCount": 100,
@@ -29,7 +29,7 @@
         },
         {"id": 4, "name": "iphone 12", "price": 700, "image": "iphone-12",
             "information": {
-                "description": "",
+                "description": "A14 Bionic, o chip mais rápido em um smartphone. Tela OLED de ponta a ponta. Ceramic Shield quatro vezes mais resistente a quedas. E modo Noite em todas as câmeras. O iPhone 12 vem com tudo.",
                 "starCount": "",
                 "stockCount": 1,
                 "reviewCount": 100,
