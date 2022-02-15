@@ -49,20 +49,24 @@ export const Product = (): JSX.Element => {
 
                     {/* Content */}
                     <div className={Styles.contentData}>
-                        <h1>{product.name?.toUpperCase()}</h1>
-                        <span>
-                            <img src="/images/stars.png" alt="Avaliações do Produto" />
-                            <span>{product.information?.reviewCount} Avaliações</span>
-                        </span>
-                        <h3>{product.information?.description}</h3>
                         <div>
-                            {product.information?.stockCount >= 2 
-                                ? ( <p className={Styles.true}>*Em Stock</p> ) 
-                                : ( <p className={Styles.false}>*Sem Stock</p> )
-                            }
-                            <p className={Styles.price}>$ {product.price}</p>
+                            <h1>{product.name?.toUpperCase()}</h1>
+                            <span>
+                                <img src="/images/stars.png" alt="Avaliações do Produto" />
+                                <span>{product.information?.reviewCount} Avaliações</span>
+                            </span>
+                            <h3>{product.information?.description}</h3>
                         </div>
-                        <button>COMPRAR</button>
+                        <div className={Styles.price}>
+                            <span>
+                                {product.information?.stockCount >= 2
+                                    ? ( <p className={Styles.true}>*Em Stock</p> )
+                                    : ( <p className={Styles.false}>*Sem Stock</p> )
+                                }
+                                <p className={Styles.price}>$ {product.price}</p>
+                            </span>
+                            <button>COMPRAR</button>
+                        </div>
                     </div>
 
                 </div>
