@@ -1,15 +1,15 @@
 import { ReactChild } from "react";
 import Styles from "./style.module.scss";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     regular?: boolean,
-    children: ReactChild,
-    
+    children: ReactChild, 
 }
 
-export const Button = ({children, regular}: ButtonProps): JSX.Element => {
+export const Button = ({children, regular, ...rest}: ButtonProps): JSX.Element => {
+    
     return (
-        <button className={regular ? Styles.nocolor : Styles.color}>
+        <button {...rest}  className={regular ? Styles.nocolor : Styles.color}>
             {children}
         </button>
     )
