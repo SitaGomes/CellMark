@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import {useParams} from "react-router-dom"
+
 import { Header } from "../../components/header"
 import { api } from "../../services/axios"
+
+import {Button} from "../../components/button"
 
 import Styles from "./product.module.scss"
 
@@ -9,7 +12,7 @@ interface Product {
     id: number,
     name: string,
     price: number,
-    image: string
+    image: string,
     information: {
         description: string,
         startCount: number,
@@ -23,7 +26,9 @@ export const Product = (): JSX.Element => {
 
     const {id} = useParams()
     const [product, setProduct] = useState({} as Product)
-
+    //const [noStock] = useState(product.information?.stockCount <= 2)
+    const [noStock, setNoStock] = useState(false)
+    
     useEffect(() => {
         const getResponse = async () => {
             const response = await api("/products/" + id)
@@ -31,9 +36,13 @@ export const Product = (): JSX.Element => {
             const data: Product = response.data
             setProduct(data)
         }
-
+        
         getResponse()
     }, [])
+
+    useEffect(() => {
+        setNoStock(product.information?.stockCount <= 2)
+    }, [product])
 
 
     return(
@@ -59,13 +68,16 @@ export const Product = (): JSX.Element => {
                         </div>
                         <div className={Styles.price}>
                             <span>
-                                {product.information?.stockCount >= 2
-                                    ? ( <p className={Styles.true}>*Em Stock</p> )
-                                    : ( <p className={Styles.false}>*Sem Stock</p> )
+                                {noStock
+                                    ? ( <p className={Styles.false}>*Sem Stock</p> )
+                                    : ( <p className={Styles.true}>*Em Stock</p> )
                                 }
                                 <p className={Styles.price}>$ {product.price}</p>
                             </span>
-                            <button>COMPRAR</button>
+                            {noStock
+                                ? ( <Button regular>COMPRAR</Button> )
+                                : ( <Button>COMPRAR</Button> )
+                            }
                         </div>
                     </div>
 
