@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { Login } from './pages/Login';
 import {Home} from './pages/Home';
 import {Product} from './pages/Product';
 
@@ -12,7 +14,8 @@ ReactDOM.render(
     <Router>
       <Routes>
 
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/product/:id' element={<Product />} />
       
       </Routes>
