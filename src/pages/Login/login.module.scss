@@ -17,9 +17,20 @@
 
     gap: 2em;
     
+    
     @media only screen and (min-width: 64rem) {
         align-items: center;
     }
     
+    button {
+        transition: box-shadow 200ms ease-in-out, transform 300ms ease-in-out;
+        &:hover {
+            -webkit-box-shadow: -2px 4px 22px -2px var(--text); 
+            box-shadow: -2px 4px 22px -2px var(--text);
+            cursor: pointer;
+    
+            transform: translateY(-5px);
+        }
+    }
 
 }
