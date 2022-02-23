@@ -8,6 +8,7 @@ import {Product} from './pages/Product';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 import "./styles/global.scss"
+import { CreateProduct } from './pages/Create';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,8 +16,9 @@ ReactDOM.render(
       <Routes>
 
         <Route path='/' element={<Login />} />
+        <Route path='/create' element={<CreateProduct />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/product/:id' element={<Product />} />
+        <Route path='/home/product/:id' element={<Product />} />
       
       </Routes>
     </Router>
